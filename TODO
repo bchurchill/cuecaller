@@ -1,0 +1,8 @@
+
+Here are some ideas to work on:
+
+* Right now the default music player is always mplayer.  It would be nice to create an install script that gave the user a choice or searched the system for good players.
+* How about a global defaults file for settings?
+* More escape sequences for the label files?
+* More integration for fades?  Like perhaps a little slider bar that moves across the screen as the fade completes?
+
