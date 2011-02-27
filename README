@@ -1,0 +1,47 @@
+cuecaller.py
+Copyright 2011 Berkeley Churchill
+Distributed under GNU GPL v3
+
+
+
+########## INSTALLING ###########
+
+Dependencies: formally the only dependency is python.  However, by default ./cuecaller makes use of mplayer to play sound files.  I highly recommend you have it installed, or that you change the default player (step 2 below)
+
+Step 1:  Copy the script into the directory of your choice.
+Step 2:  (optional) If you want to change the default music player from mplayer, edit line 85 of ./cuecaller.py to suite your needs.
+Step 3:  There is no step 3.  You're done.
+
+########## TESTING ###########
+
+STEP 1:  Run ./test
+STEP 2:  You should hear the music from the intro to Phantom of the Opera playing and see "cues" being echoed to the command line corresponding to events in the music.
+
+########## USING ###########
+
+Step 1:  Write a configuration file.
+    i) See samples/phantom.conf
+    ii) Parameters you can set are:
+        (a) INTERPRETER.  This runs the commands of your choice.  By default it's /bin/bash.  You can do very interesting things by using nc (netcat), custom lighting software, programing language interpreters, or other pieces of software.
+        (b) LABELFILE.  This designates the file with the timing information.
+        (c) SOUNDFILE.  The music that plays when the program starts.
+        (d) SOUNDPLAYER.  The music player that's used.  (defaults to mplayer)
+        (e) DEFAULTCOMMAND.  The command that's run for each cue.  It supports the following escape sequences:
+            I.   %l, the label
+            II.  %s, the start time in seconds
+            III. %S, the start time in milliseconds
+            IV.  %e, the end time in seconds
+            V.   %E, the end time in milliseconds
+            VI.  %t, the fade time (%e-%s)
+            VII. %T, the fade time in milliseconds (%E-%S)
+            IX.  %n, the cue number (automatically counted from 1)
+            X.   %%, the percent symbol
+        (f) STARTUPCOMMAND.  A command sent to the interpreter on startup.
+
+Step 2:  Write the timing ("label") file.
+    i) The easy way is to use Audacity.  Create a "label" everywhere you want a cue.
+    ii) You can also do this completely manually.  Create two columns separated by whitespace.  The first column is the "start time" for each cue and the second is the "end time".  
+
+Step 3:  In your favorite terminal emulator, run "./cuecaller config_file_name".
+
+Step 4:  Pat yourself on the back and relax.

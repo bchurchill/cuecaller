@@ -1,0 +1,2 @@
+#!/bin/bash
+./cuecaller.py samples/phantom.conf
