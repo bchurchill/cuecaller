@@ -39,7 +39,7 @@ Step 1:  Write a configuration file.
         (f) STARTUPCOMMAND.  A command sent to the interpreter on startup.
 
 Step 2:  Write the timing ("label") file.
-    i) The easy way is to use Audacity.  Create a "label" everywhere you want a cue.
+    i) The easy way is to use Audacity.  Create a "label" everywhere you want a cue.  Then in the file menu, pick "Export Labels".  This is your label file.
     ii) You can also do this completely manually.  Create two columns separated by whitespace.  The first column is the "start time" for each cue and the second is the "end time".  
 
 Step 3:  In your favorite terminal emulator, run "./cuecaller config_file_name".
